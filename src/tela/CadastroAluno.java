@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class CadastroAluno extends javax.swing.JFrame {
 
     private Aluno aluno;
-    
+
     /**
      * Creates new form CadastroAluno
      */
@@ -49,12 +49,6 @@ public class CadastroAluno extends javax.swing.JFrame {
         nome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         nome.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         nome.setText("Nome:");
-
-        varNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                varNomeActionPerformed(evt);
-            }
-        });
 
         btSalvar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btSalvar.setText("Salvar");
@@ -126,65 +120,45 @@ public class CadastroAluno extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void varNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_varNomeActionPerformed
-
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
         aluno = new Aluno();
-        boolean erro = carregarAluno();
+        boolean erro = validarFormulario();
         if (!erro) {
-            //salvarNoBanco
-    }//GEN-LAST:event_btSalvarActionPerformed
-}
+            //TODO chamar metodo que salva no bd
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+        }
 
-    private boolean carregarAluno(){
-        boolean temErro = false;
+    }//GEN-LAST:event_btSalvarActionPerformed
+
+    private boolean validarFormulario() {
         String nome = varNome.getText().trim();
-        temErro = validarCampo3Valor(nome);
-        if(!temErro){
-            aluno.setNome(nome);
-        }else{
-         return true;
-        
-            
-        String nome = varNome.getText().trim();
-        temErro = validarCampo3Valor(nome);
-        if(!temErro){
-            aluno.setNome(nome);
-            }
-        }  
-        return temErro;
+        if (validarCampo3Valor(nome)) {
+            JOptionPane.showMessageDialog(null, "Digite um nome correto!");
+            return true;
+        }
+
+        if (validarIdade()) {
+            JOptionPane.showMessageDialog(null, "Digite uma idade correta!");
+            return true;
+        }
+
+        return false;
     }
-    
-    private boolean validarIdade(){
-        boolean temErro = false;
+
+    private boolean validarIdade() {
         String idade = varIdade.getText().trim();
-        if(idade.equals("")){
-            temErro = true;
-            JOptionPane.showMessageDialog(null, "Digite uma idade correta!");          
-        }else{
-            int valorIdade = Integer.parseInt(idade);
-            if(valorIdade <= 16 || valorIdade >= 100){
-                temErro = true;
-                JOptionPane.showMessageDialog(null, "Digite uma idade correta!");
-            }else{
-               aluno.setIdade(valorIdade);
-            }
-        }
-        return temErro;
-    }
-    
-    private boolean validarCampo3Valor(String valor){    
-        boolean temErro = false;
-        if (valor.length() >= 3) {
-            aluno.setNome(valor);
+        if (idade.equals("")) {
+            return true;
         } else {
-            temErro = true;
-            JOptionPane.showMessageDialog(null, "Digite um nome válido!!");
+            int valorIdade = Integer.parseInt(idade);
+            return valorIdade <= 16 || valorIdade >= 100;
         }
-        return temErro;
     }
+
+    private boolean validarCampo3Valor(String valor) {
+        return valor.length() < 3;
+    }
+
     /**
      * @param args the command line arguments
      */

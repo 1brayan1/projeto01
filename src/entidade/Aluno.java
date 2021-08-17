@@ -19,8 +19,8 @@ public class Aluno {
     private String numero;
     private String bairro;
     private long cpf;
-
-    public String getNome() {
+    
+      public String getNome() {
         return nome;
     }
 
