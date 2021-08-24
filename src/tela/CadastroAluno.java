@@ -257,24 +257,52 @@ public class CadastroAluno extends javax.swing.JFrame {
             return true;
         }
 
-       if (validarTelefone()) {
+        if (validarTelefone()) {
             JOptionPane.showMessageDialog(null, "Digite um telefone correto!");
             return true;
         }
-        
-         if (validarSalario()) {
+
+        if (validarSalario()) {
             JOptionPane.showMessageDialog(null, "Digite um telefone correto!");
             return true;
         }
 
         String logradouro = varLogradouro.getText().trim();
         if (validarCampo3Valor(logradouro)) {
-            JOptionPane.showMessageDialog(null, "Digite um telefone correto!");
+            JOptionPane.showMessageDialog(null, "Digite um logradouro correto!");
             return true;
 
         }
 
+        if (validarNumero()) {
+            JOptionPane.showMessageDialog(null, "Digite um número correto!");
+            return true;
+        }
+
+        String bairro = varBairro.getText().trim();
+        if (validarCampo3Valor(bairro)) {
+            JOptionPane.showMessageDialog(null, "Digite um bairro correto!");
+            return true;
+        }
+
+        if (validarCpf()) {
+            JOptionPane.showMessageDialog(null, "Digite um CPF correto!");
+            return true;
+        }
+
         return false;
+    }
+
+    private boolean validarCpf() {
+        String cpf = varCpf.getText();
+        char indice = cpf.charAt(0);
+        return indice == ' ';
+
+    }
+
+    private boolean validarNumero() {
+        String numero = varNumero.getText().trim();
+        return numero.equals("") || numero.equals("0");
     }
 
     private boolean validarIdade() {
