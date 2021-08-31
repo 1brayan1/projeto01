@@ -5,79 +5,13 @@
  */
 package tela;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author brayan.waltrick
  */
 public class Template extends javax.swing.JFrame {
-
-//    public class Professor {
-//
-//        private String nome;
-//        private String email;
-//        private String telefone;
-//        private String cracha;
-//        private String logradouro;
-//        private String bairro;
-//        private String cidade;
-//
-//        public String getNome() {
-//            return nome;
-//        }
-//
-//        public void setNome(String nome) {
-//            this.nome = nome;
-//        }
-//
-//        public String getEmail() {
-//            return email;
-//        }
-//
-//        public void setEmail(String email) {
-//            this.email = email;
-//        }
-//
-//        public String getTelefone() {
-//            return telefone;
-//        }
-//
-//        public void setTelefone(String telefone) {
-//            this.telefone = telefone;
-//        }
-//
-//        public String getCracha() {
-//            return cracha;
-//        }
-//
-//        public void setCracha(String cracha) {
-//            this.cracha = cracha;
-//        }
-//
-//        public String getLogradouro() {
-//            return logradouro;
-//        }
-//
-//        public void setLogradouro(String logradouro) {
-//            this.logradouro = logradouro;
-//        }
-//
-//        public String getBairro() {
-//            return bairro;
-//        }
-//
-//        public void setBairro(String bairro) {
-//            this.bairro = bairro;
-//        }
-//
-//        public String getCidade() {
-//            return cidade;
-//        }
-//
-//        public void setCidade(String cidade) {
-//            this.cidade = cidade;
-//        }
-//
-//    }
 
     /**
      * Creates new form CadastroAluno
@@ -95,30 +29,24 @@ public class Template extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        varTelefone1 = new javax.swing.JFormattedTextField();
         principal = new javax.swing.JPanel();
         titulo = new javax.swing.JLabel();
         lb_Nome = new javax.swing.JLabel();
         varNome = new javax.swing.JTextField();
         btSalvar = new javax.swing.JButton();
         lb_Email = new javax.swing.JLabel();
-        varEmail = new javax.swing.JTextField();
         lb_Telefone = new javax.swing.JLabel();
-        varTelefone = new javax.swing.JFormattedTextField();
         lb_Cracha = new javax.swing.JLabel();
         lb_Logradouro = new javax.swing.JLabel();
-        varLogradouro = new javax.swing.JTextField();
         lb_Bairro = new javax.swing.JLabel();
-        varBairro = new javax.swing.JTextField();
         lb_Cidade = new javax.swing.JLabel();
-        varCidade = new javax.swing.JTextField();
+        varEmail = new javax.swing.JTextField();
+        varTelefone = new javax.swing.JFormattedTextField();
         varCracha = new javax.swing.JFormattedTextField();
-
-        try {
-            varTelefone1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        jTextField1 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        btLimpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -148,21 +76,9 @@ public class Template extends javax.swing.JFrame {
         lb_Email.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lb_Email.setText("Email:");
 
-        varEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                varEmailActionPerformed(evt);
-            }
-        });
-
         lb_Telefone.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lb_Telefone.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lb_Telefone.setText("Telefone:");
-
-        try {
-            varTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
 
         lb_Cracha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lb_Cracha.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -180,50 +96,73 @@ public class Template extends javax.swing.JFrame {
         lb_Cidade.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lb_Cidade.setText("Cidade:");
 
+        try {
+            varTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            varCracha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        btLimpar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btLimpar.setText("Limpar");
+        btLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLimparActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout principalLayout = new javax.swing.GroupLayout(principal);
         principal.setLayout(principalLayout);
         principalLayout.setHorizontalGroup(
             principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(principalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(principalLayout.createSequentialGroup()
-                        .addComponent(lb_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(varEmail))
-                    .addGroup(principalLayout.createSequentialGroup()
-                        .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, principalLayout.createSequentialGroup()
+                        .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(principalLayout.createSequentialGroup()
+                                    .addComponent(lb_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(varEmail))
                                 .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lb_Cidade)
-                                    .addComponent(lb_Bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(varBairro)
-                                    .addComponent(varCidade)))
-                            .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, principalLayout.createSequentialGroup()
+                                            .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(lb_Cidade)
+                                                .addComponent(lb_Bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jTextField2))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, principalLayout.createSequentialGroup()
+                                            .addComponent(lb_Logradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jTextField1))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, principalLayout.createSequentialGroup()
+                                            .addComponent(lb_Cracha, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(varCracha, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, principalLayout.createSequentialGroup()
+                                            .addComponent(lb_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(varTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGroup(principalLayout.createSequentialGroup()
                                     .addComponent(lb_Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
-                                    .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(varNome, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, principalLayout.createSequentialGroup()
-                                        .addComponent(lb_Logradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(varLogradouro))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, principalLayout.createSequentialGroup()
-                                        .addComponent(lb_Cracha, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(varCracha))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, principalLayout.createSequentialGroup()
-                                        .addComponent(lb_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(varTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))))
-                        .addGap(100, 100, 100)))
-                .addContainerGap(149, Short.MAX_VALUE))
+                                    .addComponent(varNome, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(principalLayout.createSequentialGroup()
+                                .addGap(118, 118, 118)
+                                .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 111, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         principalLayout.setVerticalGroup(
             principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,29 +185,29 @@ public class Template extends javax.swing.JFrame {
                     .addComponent(lb_Cracha)
                     .addComponent(varCracha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lb_Logradouro)
-                    .addComponent(varLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lb_Bairro)
-                    .addComponent(varBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lb_Cidade)
-                    .addComponent(varCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
-                .addComponent(btSalvar)
-                .addGap(100, 100, 100))
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btSalvar)
+                    .addComponent(btLimpar))
+                .addGap(37, 37, 37))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,14 +225,91 @@ public class Template extends javax.swing.JFrame {
     }//GEN-LAST:event_varNomeActionPerformed
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
-        String nome = varNome.getText().trim();
 
-        System.out.println(nome);
+        if (!validarFormulario()) {
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!!");
+        }
     }//GEN-LAST:event_btSalvarActionPerformed
 
-    private void varEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varEmailActionPerformed
+    private boolean validarFormulario() {
+        String nome = varNome.getText().trim();
+        if (validarCampo3Valor(nome)) {
+            JOptionPane.showMessageDialog(null, "Informe um nome válido!!");
+            return true;
+        }
+
+        if (validarEmail()) {
+            JOptionPane.showMessageDialog(null, "Informe um nome válido!!");
+            return true;
+        }
+
+        if (validarTelefone()) {
+            JOptionPane.showMessageDialog(null, "Informe um telefone válido!!");
+            return true;
+        }
+        
+        if (validarCracha()) {
+            JOptionPane.showMessageDialog(null, "Informe um crachá válido!!");
+            return true;
+        }
+        
+        String logradouro = varLogradouro.getText().trim();
+        if (validarCampo3Valor(logradouro)) {
+            JOptionPane.showMessageDialog(null, "Informe um logradouro válido!!");
+            return true;
+        }
+        
+        String bairro = varBairro.getText().trim();
+        if (validarCampo3Valor(bairro)) {
+            JOptionPane.showMessageDialog(null, "Informe um bairro válido!!");
+            return true;
+        }
+        
+        String cidade = varCidade.getText().trim();
+        if (validarCampo3Valor(cidade)) {
+            JOptionPane.showMessageDialog(null, "Informe uma cidade válido!!");
+            return true;
+        }
+
+            
+        return false;
+    }// fim do metodo validarF|ormulario()
+
+    private boolean validarCracha(){
+        Sring cracha = varCracha.getText().trim();
+//        if(cracha.equals("") || cracha.equals("00000")){
+//            return true;
+//        }
+//            return false;
+            return cracha.equals("") || cracha.equals("00000");
+    }        
+            
+    private boolean validarTelefone() {
+        String telefone = varTelefone.getText().trim();
+//        if(telefone.length() < 14){
+//              return true;
+//        }
+//        return false;
+        return telefone.length() < 14;
+    }
+
+    
+    private boolean validarEmail() {
+        String email = varEmail.getText().trim();
+        //       if(!email.contains("@")){ //brayanwaltrick17@gmail.com
+        //           return true;
+        //       }
+        //       return false;
+        return !email.contains("@") || !email.contains(".");
+    }
+
+    private boolean validarCampo3Valor(String valor) {
+        return valor.length() < 3;
+    }
+
+    private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_varEmailActionPerformed
+    }//GEN-LAST:event_btLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -333,7 +349,11 @@ public class Template extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btLimpar;
     private javax.swing.JButton btSalvar;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lb_Bairro;
     private javax.swing.JLabel lb_Cidade;
     private javax.swing.JLabel lb_Cracha;
@@ -343,13 +363,9 @@ public class Template extends javax.swing.JFrame {
     private javax.swing.JLabel lb_Telefone;
     private javax.swing.JPanel principal;
     private javax.swing.JLabel titulo;
-    private javax.swing.JTextField varBairro;
-    private javax.swing.JTextField varCidade;
     private javax.swing.JFormattedTextField varCracha;
     private javax.swing.JTextField varEmail;
-    private javax.swing.JTextField varLogradouro;
     private javax.swing.JTextField varNome;
     private javax.swing.JFormattedTextField varTelefone;
-    private javax.swing.JFormattedTextField varTelefone1;
     // End of variables declaration//GEN-END:variables
 }

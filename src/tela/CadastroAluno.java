@@ -242,7 +242,6 @@ public class CadastroAluno extends javax.swing.JFrame {
             //TODO chamar metodo que salva no bd
             JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
         }
-
     }//GEN-LAST:event_btSalvarActionPerformed
 
     private boolean validarFormulario() {
